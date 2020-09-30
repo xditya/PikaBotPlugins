@@ -1,6 +1,6 @@
 from pikabot import CMD_LIST
 from SysRuntime import *
-from pikabot.main_plugs.plug import alive 
+from pikabot.main_plugs.plug import String
 import sys
 from telethon import events, functions, __version__
 
