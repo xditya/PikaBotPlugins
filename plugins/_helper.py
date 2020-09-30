@@ -1,6 +1,6 @@
 from pikabot import CMD_LIST
 from SysRuntime import *
-from pikabot.main_plugs.plug import string
+from pikabot.main_plugs.plug import *
 import sys
 from telethon import events, functions, __version__
 
@@ -41,7 +41,7 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " is not a valid plugin!")
         else:
-            help_string = f"""Pïkå¢hµ Úsêrßð† {string}"""
+            help_string = f"""Pïkå¢hµ Úsêrßð† {helpstr}"""
             results = await event.client.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
