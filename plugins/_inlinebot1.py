@@ -87,25 +87,13 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     ))
     async def on_plug_in_callback_query_handler(event):
         plugin_name = event.data_match.group(1).decode("UTF-8")
-        help_string = ""
-        try:
-            for i in CMD_LIST[plugin_name]:
-                help_string += i
-                help_string += "\n"
-        except:
-            pass
-        if help_string is "":
-            reply_pop_up_alert = "{} is useless".format(plugin_name)
-        else:
-            reply_pop_up_alert = help_string
-        reply_pop_up_alert += "\n Use .unload {} to remove this plugin\n\
+        help_string = CMD_HELP[plugin_name].__doc__
+        reply_pop_up_alert = help_string if help_string is not None else \
+            "No DOCSTRING has been setup for {} plugin".format(plugin_name)
+        reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
             ©PikaBot".format(plugin_name)
-        try:
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-        except: 
-            halps = "Do .help {} to get the list of commands.".format(plugin_name)
-            await event.answer(halps, cache_time=0, alert=True)
-  
+        await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+        
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = 5
     number_of_cols = 2
