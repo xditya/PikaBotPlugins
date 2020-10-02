@@ -91,7 +91,7 @@ async def on_view_blacklist(event):
               await event.delete()
       else:
           await event.edit(OUT_STR)
-    if bot2 is not None and event.from_id==bot2.uid
+    if bot2 is not None and event.from_id==bot2.uid:
       all_blacklisted = sqlx.gc_blx(event.chat_id)
       OUT_STR = "Blacklists in the Current Chat:\n"
       if len(all_blacklisted) > 0:
