@@ -87,7 +87,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     ))
     async def on_plug_in_callback_query_handler(event):
         plugin_name = event.data_match.group(1).decode("UTF-8")
-        help_string = CMD_LIST[plugin_name].__doc__.format(x=rx)
+        help_string = CMD_LIST[plugin_name].__doc__.format(i=rx)
 
         reply_pop_up_alert = help_string if help_string is not None else \
             "No DOCSTRING has been setup for {} plugin".format(plugin_name)
