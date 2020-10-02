@@ -51,7 +51,7 @@ async def on_new_message(event):
                 sqlx.rf_blx(event.chat_id, snip.lower())
             break
 
-@ItzSjDude(pattern="addblacklist$ ((.|\n)*)")
+@ItzSjDude(pattern="blacklist ((.|\n)*)")
 async def on_add_black_list(event):
     if event.from_id == bot.uid:
       text = event.pattern_match.group(1)
@@ -116,7 +116,7 @@ async def on_view_blacklist(event):
 
 
 
-@ItzSjDude(pattern="rmblacklist$ ((.|\n)*)")
+@ItzSjDude(pattern="rmblacklist ((.|\n)*)")
 async def on_delete_blacklist(event):
     if event.chat_id == bot.uid:
       text = event.pattern_match.group(1)
