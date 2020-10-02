@@ -86,15 +86,19 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         data=re.compile(b"us_plugin_(.*)")
     ))
     async def on_plug_in_callback_query_handler(event):
-        plugin_name = event.data_match.group(1).decode("UTF-8")
-        help_string = CMD_LIST[plugin_name].__doc__.format(i=rx)
+        if event.query.user_id == b1.id or event.query.user_id == b2.id or event.query.user_id == b3.id or event.query.user_id == b4.id and query.startswith("Pïkå¢hµ"):
+             plugin_name = event.data_match.group(1).decode("UTF-8")
+             help_string = CMD_LIST[plugin_name].__doc__.format(i=rx)
 
-        reply_pop_up_alert = help_string if help_string is not None else \
-            "No DOCSTRING has been setup for {} plugin".format(plugin_name)
-        reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
-            ©PikaBot".format(plugin_name)
-        await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-        
+             reply_pop_up_alert = help_string if help_string is not None else \
+             "No DOCSTRING has been setup for {} plugin".format(plugin_name)
+             reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
+              ©PikaBot".format(plugin_name)
+             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+        else:
+             reply_pop_up_alert = "Why r u clicking this this.Please get your own PikaBot, and don't use mine!"
+             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+            
 def paginate_help(page_number, loaded_plugins, prefix):
     number_of_rows = 5
     number_of_cols = 2
