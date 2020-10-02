@@ -9,14 +9,16 @@ Available Commands:
 import asyncio
 import io
 import re
-from pikabot import bot2
 import pikabot.sql_helper.blacklist_sql as sql
 import pikabot.sql_helper.blacklistx_sql as sqlx
 from telethon import events, utils
 from telethon.tl import types, functions
 from uniborg.util import admin_cmd
-
-
+try:
+  from pikabot import bot,bot2
+except:
+    pass
+    
 @borg.on(admin_cmd(incoming=True))
 async def on_new_message(event):
     # TODO: exempt admins from locks
@@ -126,7 +128,7 @@ async def on_delete_blacklist(event):
           if sql.rm_from_blacklist(event.chat_id, trigger.lower()):
               successful += 1
       await event.edit(f"Removed {successful} / {len(to_unblacklist)} from the blacklist")
-    if bot2 is not None and event.from_id==bot.uid:
+    if bot2 is not None and event.from_id==bot2.uid:
       text = event.pattern_match.group(1)
       to_unblacklist = list(set(trigger.strip() for trigger in text.split("\n") if trigger.strip()))
       successful = 0
