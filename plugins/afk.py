@@ -1,5 +1,5 @@
 """AFK Plugin For Pikabot
-{x}afk <reason> """
+{i}afk <reason> """
 import asyncio
 import datetime
 from telethon import events
