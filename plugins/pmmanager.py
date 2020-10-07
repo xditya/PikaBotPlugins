@@ -9,6 +9,10 @@ from telethon import events, errors, functions, types
 from pikabot.utils import admin_cmd
 from var import Var
 
+
+LOGBOT = os.environ.get("BOTLOG_CHATID", None)
+    if LOGBOT:
+        LOGBOT = int(LOGBOT)
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
   WARN_PIC = "https://telegra.ph/file/2bffdacf584f596a9d99d.jpg"
@@ -30,7 +34,7 @@ USER_BOT_NO_WARN = ("`Hello ! This is` **[Pikachu Userbot](t.me/ItzSjDudeProject
                     "**Now You Are In Trouble So Send** 🔥 `/start` 🔥  **To Start A Valid Conversation!!**")
 
 
-if Var.BOTLOG_CHATID is not None:
+if LOGBOT is not None:
     @bot.on(admin_cmd(pattern="approve ?(.*)"))
     async def approve_p_m(event):
         if event.fwd_from:
