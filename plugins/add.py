@@ -1,5 +1,5 @@
 """Invite the user(s) to the current chat
-Syntax: .invite <User(s)>"""
+{i}invite <User(s)>"""
 
 from telethon import functions
 from pikabot.utils import ItzSjDude
