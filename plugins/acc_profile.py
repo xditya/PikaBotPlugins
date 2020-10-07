@@ -1,13 +1,13 @@
 """Profile Related Commands
-.autobio 
-.autoname
-.autopfp
-.avengerspfp
-.animepfp
-.gamerpfp
-.pbio <Bio>
-.pname <Name>
-.ppic
+{i}autobio 
+{i}autoname
+{i}autopfp
+{i}avengerspfp
+{i}animepfp
+{i}gamerpfp
+{i}pbio <Bio>
+{i}pname <Name>
+{i}ppic <Reply to pic>
 """
 import asyncio, urllib, os, time 
 from telethon import events
