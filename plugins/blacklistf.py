@@ -13,6 +13,7 @@ import pikabot.sql_helper.blacklist_sql as sql
 import pikabot.sql_helper.blacklistx_sql as sqlx
 from telethon import events, utils
 from telethon.tl import types, functions
+from var import Var
 from uniborg.util import admin_cmd
 try:
   from pikabot import bot,bot2
