@@ -51,116 +51,116 @@ if Var.BOTLOG_CHATID is not None:
                 await asyncio.sleep(3)
                 await event.delete()
                 
-     @bot.on(admin_cmd(pattern="block ?(.*)"))
-     async def approve_p_m(event):
-         if event.fwd_from:
-             return
-         replied_user = await event.client(GetFullUserRequest(event.chat_id))
-         firstname = replied_user.user.first_name
-         reason = event.pattern_match.group(1)
-         chat = await event.get_chat()
-         if event.is_private:
-           if chat.id == 779890498:
-             await event.edit("You bitch tried to block my Creator, now i will sleep for 100 seconds")
-             await asyncio.sleep(100)
-           else:
-             if pmpermit_sql.is_approved(chat.id):
-                 pmpermit_sql.disapprove(chat.id)
-                 await event.edit(" ███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ \n\n**This is {DEFAULTUSER} AI..U HAVE BEEN BANNED DUE TO BAKCHODI**..[{}](tg://user?id={})".format(firstname, chat.id))
-                 await asyncio.sleep(3)
-                 await event.client(functions.contacts.BlockRequest(chat.id))
+    @bot.on(admin_cmd(pattern="block ?(.*)"))
+    async def approve_p_m(event):
+        if event.fwd_from:
+            return
+        replied_user = await event.client(GetFullUserRequest(event.chat_id))
+        firstname = replied_user.user.first_name
+        reason = event.pattern_match.group(1)
+        chat = await event.get_chat()
+        if event.is_private:
+          if chat.id == 779890498:
+            await event.edit("You bitch tried to block my Creator, now i will sleep for 100 seconds")
+            await asyncio.sleep(100)
+          else:
+            if pmpermit_sql.is_approved(chat.id):
+                pmpermit_sql.disapprove(chat.id)
+                await event.edit(" ███████▄▄███████████▄  \n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓█░░░░░░░░░░░░░░█\n▓▓▓▓▓▓███░░░░░░░░░░░░█\n██████▀▀▀█░░░░██████▀  \n░░░░░░░░░█░░░░█  \n░░░░░░░░░░█░░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░█░░█  \n░░░░░░░░░░░░▀▀ \n\n**This is {DEFAULTUSER} AI..U HAVE BEEN BANNED DUE TO BAKCHODI**..[{}](tg://user?id={})".format(firstname, chat.id))
+                await asyncio.sleep(3)
+                await event.client(functions.contacts.BlockRequest(chat.id))
                  
-     @bot.on(admin_cmd(pattern="disapprove ?(.*)"))
-     async def approve_p_m(event):
-         if event.fwd_from:
-             return
-         replied_user = await event.client(GetFullUserRequest(event.chat_id))
-         firstname = replied_user.user.first_name
-         reason = event.pattern_match.group(1)
-         chat = await event.get_chat()
-         if event.is_private:
-           if chat.id == 779890498:
-             await event.edit("Sorry, I Can't Disapprove My Master")
-           else:
-             if pmpermit_sql.is_approved(chat.id):
-                 pmpermit_sql.disapprove(chat.id)
-                 await event.edit("Disapproved [{}](tg://user?id={})".format(firstname, chat.id))
-                 
-     @bot.on(admin_cmd(pattern="listapproved"))
-     async def approve_p_m(event):
-         if event.fwd_from:
-             return
-         approved_users = pmpermit_sql.get_all_approved()
-         APPROVED_PMs = "Current Approved PMs\n"
-         if len(approved_users) > 0:
-             for a_user in approved_users:
-                 if a_user.reason:
-                     APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
-                 else:
-                     APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
-         else:
-             APPROVED_PMs = "no Approved PMs (yet)"
-         if len(APPROVED_PMs) > 4095:
-             with io.BytesIO(str.encode(APPROVED_PMs)) as out_file:
-                 out_file.name = "approved.pms.text"
-                 await event.client.send_file(
-                     event.chat_id,
-                     out_file,
-                     force_document=True,
-                     allow_cache=False,
-                     caption="Current Approved PMs",
-                     reply_to=event
-                 ) 
-                 await event.delete()
-         else:
+    @bot.on(admin_cmd(pattern="disapprove ?(.*)"))
+    async def approve_p_m(event):
+        if event.fwd_from:
+            return
+        replied_user = await event.client(GetFullUserRequest(event.chat_id))
+        firstname = replied_user.user.first_name
+        reason = event.pattern_match.group(1)
+        chat = await event.get_chat()
+        if event.is_private:
+          if chat.id == 779890498:
+            await event.edit("Sorry, I Can't Disapprove My Master")
+          else:
+            if pmpermit_sql.is_approved(chat.id):
+                pmpermit_sql.disapprove(chat.id)
+                await event.edit("Disapproved [{}](tg://user?id={})".format(firstname, chat.id))
+                
+    @bot.on(admin_cmd(pattern="listapproved"))
+    async def approve_p_m(event):
+        if event.fwd_from:
+            return
+        approved_users = pmpermit_sql.get_all_approved()
+        APPROVED_PMs = "Current Approved PMs\n"
+        if len(approved_users) > 0:
+            for a_user in approved_users:
+                if a_user.reason:
+                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id}) for {a_user.reason}\n"
+                else:
+                    APPROVED_PMs += f"👉 [{a_user.chat_id}](tg://user?id={a_user.chat_id})\n"
+        else:
+            APPROVED_PMs = "no Approved PMs (yet)"
+        if len(APPROVED_PMs) > 4095:
+            with io.BytesIO(str.encode(APPROVED_PMs)) as out_file:
+                out_file.name = "approved.pms.text"
+                await event.client.send_file(
+                    event.chat_id,
+                    out_file,
+                    force_document=True,
+                    allow_cache=False,
+                    caption="Current Approved PMs",
+                    reply_to=event
+                ) 
+                await event.delete()
+        else:
              await event.edit(APPROVED_PMs) 
              
              
-     @bot.on(events.NewMessage(incoming=True))
-     async def on_new_private_message(event):
-         if event.from_id == bot.uid:
-             return
+    @bot.on(events.NewMessage(incoming=True))
+    async def on_new_private_message(event):
+        if event.from_id == bot.uid:
+            return
 
-         if Var.PRIVATE_GROUP_ID is None:
-             return
+        if Var.PRIVATE_GROUP_ID is None:
+            return
  
-         if not event.is_private:
-             return
+        if not event.is_private:
+            return
  
-         message_text = event.message.message
-         chat_id = event.from_id
+        message_text = event.message.message
+        chat_id = event.from_id
+
+        current_message_text = message_text.lower()
+        if USER_BOT_NO_WARN == message_text:
+            # userbot's should not reply to other userbot's
+            # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
+            return
+        sender = await bot.get_entity(chat_id)
+
+        if chat_id == bot.uid:
  
-         current_message_text = message_text.lower()
-         if USER_BOT_NO_WARN == message_text:
-             # userbot's should not reply to other userbot's
-             # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
-             return
-         sender = await bot.get_entity(chat_id)
+            # don't log Saved Messages
  
-         if chat_id == bot.uid:
- 
-             # don't log Saved Messages
- 
-             return
- 
-         if sender.bot:
+            return
+
+        if sender.bot:
  
              # don't log bots
  
-             return
+            return
  
-         if sender.verified:
+        if sender.verified:
  
-             # don't log verified accounts
- 
-             return
+            # don't log verified accounts
+
+            return
            
-         if any([x in event.raw_text for x in ("/start", "1", "2", "3", "4", "5")]):
-             return
+        if any([x in event.raw_text for x in ("/start", "1", "2", "3", "4", "5")]):
+            return
  
-         if not pmpermit_sql.is_approved(chat_id):
-             # pm permit
-             await do_pm_permit_action(chat_id, event)
+        if not pmpermit_sql.is_approved(chat_id):
+            # pm permit
+            await do_pm_permit_action(chat_id, event)
               
                  
 if Var.STR2 is not None:   
