@@ -36,22 +36,6 @@ async def on_new_message(event):
                 sql.rm_from_blacklist(event.chat_id, snip.lower())
             break
 
-@bot2.on(admin_cmd(incoming=True))
-async def on_new_message(event):
-    # TODO: exempt admins from locks
-    if bot2.me.id == event.from_id:
-        return
-    name = event.raw_text
-    snips = sqlx.gc_blx(event.chat_id)
-    for snip in snips:
-        pattern = r"( |^|[^\w])" + re.escape(snip) + r"( |$|[^\w])"
-        if re.search(pattern, name, flags=re.IGNORECASE):
-            try:
-                await event.delete()
-            except Exception as e:
-                await event.reply("I do not have DELETE permission in this chat")
-                sqlx.rf_blx(event.chat_id, snip.lower())
-            break
 
 @ItzSjDude(pattern="blacklist ((.|\n)*)")
 async def on_add_black_list(event):
@@ -136,3 +120,21 @@ async def on_delete_blacklist(event):
           if sqlx.rf_blx(event.chat_id, trigger.lower()):
               successful += 1
       await event.edit(f"Removed {successful} / {len(to_unblacklist)} from the blacklist")
+
+if Var.STR2 is not None:
+  @bot2.on(admin_cmd(incoming=True))
+  async def on_new_message(event):
+      # TODO: exempt admins from locks
+      if bot2.me.id == event.from_id:
+          return
+      name = event.raw_text
+      snips = sqlx.gc_blx(event.chat_id)
+      for snip in snips:
+          pattern = r"( |^|[^\w])" + re.escape(snip) + r"( |$|[^\w])"
+          if re.search(pattern, name, flags=re.IGNORECASE):
+              try:
+                  await event.delete()
+              except Exception as e:
+                  await event.reply("I do not have DELETE permission in this chat")
+                  sqlx.rf_blx(event.chat_id, snip.lower())
+              break
