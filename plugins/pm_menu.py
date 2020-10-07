@@ -122,7 +122,7 @@ async def _(event):
                         await asyncio.sleep(3)
                         await event.client(functions.contacts.BlockRequest(chat_id))
         
-if Var.STR2 is not none:
+if Var.STR2 is not None:
   @bot2.on(events.NewMessage(pattern="/start ?(.*)", incoming=True))
   async def _(event):
       chat_id = event.from_id
