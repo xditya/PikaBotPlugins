@@ -11,8 +11,8 @@ from var import Var
 
 
 LOGBOT = os.environ.get("BOTLOG_CHATID", None)
-    if LOGBOT:
-        LOGBOT = int(LOGBOT)
+if LOGBOT:
+  LOGBOT = int(LOGBOT)
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
   WARN_PIC = "https://telegra.ph/file/2bffdacf584f596a9d99d.jpg"
