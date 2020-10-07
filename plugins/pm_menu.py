@@ -145,13 +145,13 @@ if var.STR2 is not none:
                      await response.delete()
                      await event.client.send_message(chat, LWARN)
                      response = await conv.get_response(chat)
-                    await event.delete()
-                    await response.delete()
-                    response = await conv.get_response(chat)
-                    if not response.text == "/start":
-                        await event.client.send_message(chat, TWO)
-                        await asyncio.sleep(3)
-                        await event.client(functions.contacts.BlockRequest(chat_id))
+                     await event.delete()
+                     await response.delete()
+                     response = await conv.get_response(chat)
+                     if not response.text == "/start":
+                         await event.client.send_message(chat, TWO)
+                         await asyncio.sleep(3)
+                         await event.client(functions.contacts.BlockRequest(chat_id))
              elif y == "2":
                  await event.client.send_message(chat, LWARN)
                  response = await conv.get_response(chat)
