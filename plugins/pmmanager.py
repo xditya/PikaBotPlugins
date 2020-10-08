@@ -18,7 +18,6 @@ if PMPERMIT_PIC is None:
   WARN_PIC = "https://telegra.ph/file/2bffdacf584f596a9d99d.jpg"
 else:
   WARN_PIC = PMPERMIT_PIC
-CACHE = {}
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 
@@ -139,11 +138,7 @@ if LOGBOT is not None:
             # userbot's should not reply to other userbot's
             # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
             return
-        if event.from_id in CACHE:
-            sender = CACHE[chat_id]
-        else:
-            sender = await bot.get_entity(chat_id)
-            CACHE[chat_id] = sender
+        sender = await bot.get_entity(chat_id)
 
         if chat_id == bot.uid:
  
