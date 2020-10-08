@@ -18,7 +18,7 @@ if PMPERMIT_PIC is None:
   WARN_PIC = "https://telegra.ph/file/2bffdacf584f596a9d99d.jpg"
 else:
   WARN_PIC = PMPERMIT_PIC
-
+CACHE = {}
 PM_WARNS = {}
 PREV_REPLY_MESSAGE = {}
 
@@ -128,9 +128,9 @@ if LOGBOT is not None:
         if Var.PRIVATE_GROUP_ID is None:
             return
  
-        if not event.is_private:
+                if not event.is_private:
             return
- 
+
         message_text = event.message.message
         chat_id = event.from_id
 
@@ -139,7 +139,11 @@ if LOGBOT is not None:
             # userbot's should not reply to other userbot's
             # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
             return
-        sender = await bot.get_entity(chat_id)
+        if event.from_id in CACHE:
+            sender = CACHE[event.from_id]
+        else:
+            sender = await bot.get_entity(event.from_id)
+            CACHE[event.from_id] = sender
 
         if chat_id == bot.uid:
  
@@ -254,7 +258,7 @@ if Var.STR2 is not None:
         if Var.PRIVATE_GROUP_ID is None:
             return
 
-        if not event.is_private:
+                if not event.is_private:
             return
 
         message_text = event.message.message
@@ -265,7 +269,11 @@ if Var.STR2 is not None:
             # userbot's should not reply to other userbot's
             # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
             return
-        sender = await bot2.get_entity(chat_id)
+        if event.from_id in CACHE:
+            sender = CACHE[event.from_id]
+        else:
+            sender = await bot.get_entity(event.from_id)
+            CACHE[event.from_id] = sender
 
         if chat_id == bot2.uid:
 
