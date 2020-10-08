@@ -142,7 +142,7 @@ if LOGBOT is not None:
         if event.from_id in CACHE:
             sender = CACHE[chat_id]
         else:
-            sender = await bot.get_entity(event.from_id)
+            sender = await bot.get_entity(chat_id)
             CACHE[chat_id] = sender
 
         if chat_id == bot.uid:
