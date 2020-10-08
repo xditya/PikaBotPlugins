@@ -258,7 +258,7 @@ if Var.STR2 is not None:
         if Var.PRIVATE_GROUP_ID is None:
             return
 
-                if not event.is_private:
+        if not event.is_private:
             return
 
         message_text = event.message.message
