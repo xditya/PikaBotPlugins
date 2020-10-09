@@ -93,12 +93,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                 reply_pop_up_alert='Command list too long check Saved Messages'
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
                 await event.client.send_message(event.chat_id, help_string)
-                
-             reply_pop_up_alert = help_string if help_string is not None else \
-             "No DOCSTRING has been setup for {} plugin".format(plugin_name)
-             reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
-              ©PikaBot".format(plugin_name)
-             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+             else:  
+                reply_pop_up_alert = help_string if help_string is not None else \
+                "No DOCSTRING has been setup for {} plugin".format(plugin_name)
+                reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
+                 ©PikaBot".format(plugin_name)
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
         else:
              reply_pop_up_alert = "Why r u clicking this this.Please get your own PikaBot, and don't use mine!"
              await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
