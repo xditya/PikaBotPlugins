@@ -94,19 +94,25 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
              "No DOCSTRING has been setup for {} plugin".format(plugin_name)
              reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
                ©PikaBot".format(plugin_name)
-             try:
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-             except:
-                pop_up = "Command list too long check Saved Messages"
-                await event.answer(pop_up, cache_time=0, alert=True)
-                if bot is not None and event.query.user_id==bot.uid:
-                   await bot.send_message('me', help_string) 
-                if bot2 is not None and event.query.user_id==bot2.uid:
-                   await bot2.send_message('me', help_string)
-                if bot3 is not None and event.query.user_id==bot3.uid:
-                   await bot3.send_message('me', help_string) 
-                if bot4 is not None and event.query.user_id==bot4.uid:
-                   await bot4.send_message('me', help_string)
+             if len(a) > 4095:
+               try:
+                 pop_up = "Command list too long check Saved Messages"
+                 await event.answer(pop_up, cache_time=0, alert=True)
+                 if bot is not None and event.query.user_id==bot.uid:
+                    await bot.send_message('me', help_string) 
+                 if bot2 is not None and event.query.user_id==bot2.uid:
+                    await bot2.send_message('me', help_string)
+                 if bot3 is not None and event.query.user_id==bot3.uid:
+                    await bot3.send_message('me', help_string) 
+                 if bot4 is not None and event.query.user_id==bot4.uid:
+                    await bot4.send_message('me', help_string)
+               except:
+                   pass
+             else:
+               await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+                 
+             
+
         else:
              reply_pop_up_alert = "Why r u clicking this this.Please get your own PikaBot, and don't use mine!"
              await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
