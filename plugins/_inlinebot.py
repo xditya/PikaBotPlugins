@@ -99,8 +99,14 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
              except:
                 pop_up = "Command list too long check Saved Messages"
                 await event.answer(pop_up, cache_time=0, alert=True)
-                await event.client.send_message('me', help_string) 
-                
+                if bot is not None and event.query.user_id==bot.uid:
+                   await bot.send_message('me', help_string) 
+                if bot2 is not None and event.query.user_id==bot2.uid:
+                   await bot2.send_message('me', help_string)
+                if bot3 is not None and event.query.user_id==bot3.uid:
+                   await bot3.send_message('me', help_string) 
+                if bot4 is not None and event.query.user_id==bot4.uid:
+                   await bot4.send_message('me', help_string)
         else:
              reply_pop_up_alert = "Why r u clicking this this.Please get your own PikaBot, and don't use mine!"
              await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
