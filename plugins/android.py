@@ -3,7 +3,18 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module containing commands related to android"""
+""" Userbot module containing commands related to android
+{i}magisk
+\nGet latest Magisk releases\
+{i}device <codename>
+Usage: Get info about android device codename or model.
+{i}codename <brand> <device>
+Usage: Search for android device codename.
+\n\n{i}specs <brand> <device>
+\nUsage: Get device specifications info.
+{i}twrp <codename>
+\nUsage: Get latest twrp download for android device."
+"""
 
 import re
 from requests import get
