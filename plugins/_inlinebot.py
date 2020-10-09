@@ -89,7 +89,11 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         if event.query.user_id == b1.id or event.query.user_id == b2.id or event.query.user_id == b3.id or event.query.user_id == b4.id and query.startswith("Pïkå¢hµ"):
              plugin_name = event.data_match.group(1).decode("UTF-8")
              help_string = CMD_LIST[plugin_name].__doc__.format(i=rx)
-
+             if len(help_string) > 4095:
+                reply_pop_up_alert='Command list too long check Saved Messages'
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+                await event.client.send_message(event.chat_id, help_string)
+                
              reply_pop_up_alert = help_string if help_string is not None else \
              "No DOCSTRING has been setup for {} plugin".format(plugin_name)
              reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
