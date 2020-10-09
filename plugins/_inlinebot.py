@@ -8,7 +8,7 @@ import re
 from telethon import events, errors, custom
 from var import Var
 import io
-from pikabot import CMD_LIST
+from pikabot import CMD_LIST, ALIVE_NAME
 try:
    from pikabot import bot2, bot3, bot4
 except:
@@ -115,8 +115,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
              
 
         else:
-             z=await bot.get_entity(bot.uid)
-             reply_pop_up_alert = "Hi {}'s bot here ,\n       Why r u clicking this this.Please get your own PikaBot, and don't use mine!".format(z.first_name)
+             reply_pop_up_alert = "Hi {}'s bot here ,\n       Why r u clicking this this.Please get your own PikaBot, and don't use mine!".format(ALIVE_NAME)
              await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             
 def paginate_help(page_number, loaded_plugins, prefix):
