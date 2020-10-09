@@ -115,7 +115,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
              
 
         else:
-             reply_pop_up_alert = "Hi {},\n       Why r u clicking this this.Please get your own PikaBot, and don't use mine!".format(usr.username)
+             reply_pop_up_alert = "Hi {},\n       Why r u clicking this this.Please get your own PikaBot, and don't use mine!".format(usr.first_name)
              await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             
 def paginate_help(page_number, loaded_plugins, prefix):
