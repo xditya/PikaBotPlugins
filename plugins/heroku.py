@@ -164,6 +164,21 @@ def prettyjson(obj, indent=2, maxlinelength=80):
     items, _ = getsubitems(obj, itemkey="", islast=True, maxlinelength=maxlinelength - indent, indent=indent)
     return indentitems(items, indent, level=0)
 
+
+@ItzSjDude(outgoing=True, pattern="restart")
+async def _(rstrt):
+    if event.fwd_from:
+        return
+    if Var.HEROKU_APP_NAME is not None:
+      try:
+         app = Heroku.app(Var.HEROKU_APP_NAME)
+         await rstrt.edit("**Heroku*** : Restarted. `.ping` me or `.helpme` to check if I am online")
+         app.restart()
+      except:
+          pass
+    else:
+      await rstrt.edit("**Heroku*** : Can't Restart App Name Not found Please set HEROKU_APP_NAME")
+
 @ItzSjDude(pattern=r"logs")
 async def _(dyno):        
         try:
