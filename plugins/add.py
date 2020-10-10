@@ -1,4 +1,4 @@
-"""Invite the user(s) to the current chat
+"""Invite the users to the current chat
 {i}invite <User(s)>"""
 
 from telethon import functions
