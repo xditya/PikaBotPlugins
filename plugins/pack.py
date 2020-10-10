@@ -6,15 +6,16 @@
 
 import os, asyncio
 @ItzSjDude (pattern="pack ?(.*)")
-async def _(a):
+async def _(event):
+    a = await event.get_reply_message()
     input_str = event.pattern_match.group(1)
     b = open(input_str, 'w')
     b.write(str(a.message))
     b.close()
     await event.edit(f"**Packing into** `{input_str}`")
     await asyncio.sleep(2)
-    await a.edit(f"**Uploading** `{input_str}`")
+    await event.edit(f"**Uploading** `{input_str}`")
     await asyncio.sleep(2)
     await event.client.send_file(a.chat_id, caption="Here is your {}".format(input_str)
-    await a.delete()
+    await event.delete()
     os.remove(input_str)
