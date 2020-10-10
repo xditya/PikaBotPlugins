@@ -6,7 +6,7 @@
 
 import os, asyncio
 @ItzSjDude (pattern="pack ?(.*)")
-async def _(event):
+async def _(a):
     input_str = event.pattern_match.group(1)
     b = open(input_str, 'w')
     b.write(str(a.message))
@@ -15,6 +15,6 @@ async def _(event):
     await asyncio.sleep(2)
     await a.edit(f"**Uploading** `{input_str}`")
     await asyncio.sleep(2)
-    await event.client.send_file(event.chat_id, caption="Here is your {}".format(input_str)
+    await event.client.send_file(a.chat_id, caption="Here is your {}".format(input_str)
     await a.delete()
     os.remove(input_str)
