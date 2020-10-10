@@ -167,8 +167,6 @@ def prettyjson(obj, indent=2, maxlinelength=80):
 
 @ItzSjDude(outgoing=True, pattern="restart")
 async def _(rstrt):
-    if event.fwd_from:
-        return
     if Var.HEROKU_APP_NAME is not None:
       try:
          app = Heroku.app(Var.HEROKU_APP_NAME)
