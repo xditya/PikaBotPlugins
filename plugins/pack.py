@@ -5,7 +5,7 @@
 #Made by @ItzSjDude. All Rights reserved
 
 import os, asyncio
-@ItzSjDude (pattern="pack ?(.*)")
+@ItzSjDude(pattern="pack ?(.*)")
 async def _(event):
     a = await event.get_reply_message()
     input_str = event.pattern_match.group(1)
@@ -17,4 +17,5 @@ async def _(event):
     await event.edit(f"**Uploading** `{input_str}`")
     await asyncio.sleep(2)
     await event.client.send_file(a.chat_id, caption="Here is your {}".format(input_str)
+    await event.delete()
     os.remove(input_str)
