@@ -16,6 +16,6 @@ async def _(event):
     await asyncio.sleep(2)
     await event.edit(f"**Uploading** `{input_str}`")
     await asyncio.sleep(2)
-    await event.client.send_file(event.chat_id, caption="Here is your {}".format(input_str))
+    await event.client.send_file(event.chat_id, input_str, caption="Here is your {}".format(input_str))
     await event.delete()
     os.remove(input_str)
