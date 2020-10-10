@@ -16,7 +16,7 @@ async def coder_print(event):
     c=s.read()
     s.close()
     pygments.highlight(f"{c}", Python3Lexer(), ImageFormatter(font_name="DejaVu Sans Mono", line_numbers=True), "out.png")
-    if input=='doc'
+    if 'doc'in input:
       await event.client.send_file(event.chat_id, "out.png", force_document=True)
       await event.delete()
       os.remove(a)
