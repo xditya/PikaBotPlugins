@@ -1,7 +1,7 @@
 """Beautifies nd convert python code into image
 {i}ncode <reply to file for normal image>
 {i}ncode doc <reply to file for document format> 
-""""
+"""
 #created by @Buddhhu, Rebased by @ItzSjDude. All Rights Reserved 
 
 import pygments, os, asyncio
