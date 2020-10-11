@@ -23,7 +23,7 @@ if bot3:
     b3 = bot3.me
 else: 
     b3=b1
-if bot3:
+if bot4:
     b4 = bot4.me
 else: 
     b4=b1   
