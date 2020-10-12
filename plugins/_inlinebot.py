@@ -98,6 +98,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
              if len(help_string) > 200:
                try:
                  pop_up = "Command list too long check Saved Messages"
+                 help_string +=\n\n **Self distructing in 15secs**"
                  await event.answer(pop_up, cache_time=0, alert=True)
                  if bot is not None and event.query.user_id==bot.uid:
                     a=await bot.send_message('me', help_string);await asyncio.sleep(15);await a.delete()
