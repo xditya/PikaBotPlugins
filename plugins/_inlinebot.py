@@ -101,13 +101,13 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                  help_string += "\nn**Self districting in 15secs**"
                  await event.answer(pop_up, cache_time=0, alert=True)
                  if bot is not None and event.query.user_id==bot.uid:
-                    a=await bot.send_message('me', help_string);await asyncio.sleep(15):await a.delete()
+                    a=await bot.send_message('me', help_string);await asyncio.sleep(15);await a.delete()
                  if bot2 is not None and event.query.user_id==bot2.uid:
-                    a=await bot2.send_message('me', help_string);await asyncio.sleep(15):await a.delete()
+                    a=await bot2.send_message('me', help_string);await asyncio.sleep(15);await a.delete()
                  if bot3 is not None and event.query.user_id==bot3.uid:
-                    a=await bot3.send_message('me', help_string);await asyncio.sleep(15):await a.delete()
+                    a=await bot3.send_message('me', help_string);await asyncio.sleep(15);await a.delete()
                  if bot4 is not None and event.query.user_id==bot4.uid:
-                    a=await bot4.send_message('me', help_string);await asyncio.sleep(15):await a.delete()
+                    a=await bot4.send_message('me', help_string);await asyncio.sleep(15);await a.delete()
                except:
                    pass
              else:
