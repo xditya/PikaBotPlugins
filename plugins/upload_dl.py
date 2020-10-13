@@ -11,8 +11,8 @@ from pySmartDL import SmartDL
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeVideo
-from userbot import LOGS, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
-from plus.utils import progress, humanbytes
+from pikabot import LOGS, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from pikabot.utils import progress, humanbytes
 
 
 @ItzSjDude(pattern=r"dl(?: |$)(.*)")
