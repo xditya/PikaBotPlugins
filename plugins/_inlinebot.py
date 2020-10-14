@@ -93,7 +93,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
                  
              reply_pop_up_alert = help_string if help_string is not None else \
              "No DOCSTRING has been setup for {} plugin".format(plugin_name)
-             reply_pop_up_alert += "/n/n©PikaBot"
+             reply_pop_up_alert += "\n\n©PikaBot"
              if len(help_string) >= 140:
                  pop_up = "Command list too long check Saved Messages"
                  help_string += "\n\n **Self distructing in 15secs**"
