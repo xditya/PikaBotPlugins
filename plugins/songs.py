@@ -6,7 +6,7 @@
 
 import asyncio
 
-@ItzSjDude (pattern="song (.*)")
+@ItzSjDude(pattern="song (.*)")
 async def _(event):
     chat='@songdl_Bot'
     input_str = str(event.text[6:])
@@ -21,7 +21,7 @@ async def _(event):
     		await asyncio.sleep(3)
     		a = await event.client.get_messages(chat)
     		ac = a[0]
-    		await event.client.send_file(event.chat_id, ac, caption=f'**{input_str}\nUploaded by [Plus+ Userbot](t.me/plusub)**')
+    		await event.client.send_file(event.chat_id, ac, caption=f'**{input_str}\nUploaded by [Pikabot](t.me/ItzSjDudeProjects)**')
     		await chut.delete()
     	else:
     		await chut.edit("**Failed to get your song...**")
