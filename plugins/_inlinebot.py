@@ -95,7 +95,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
              "No DOCSTRING has been setup for {} plugin".format(plugin_name)
              reply_pop_up_alert += "\n\n Use .unload {} to remove this plugin\n\
                ©PikaBot".format(plugin_name)
-             if len(help_string) >=200:
+             if len(help_string) >= 200:
                try:
                  pop_up = "Command list too long check Saved Messages"
                  help_string += "\n\n **Self distructing in 15secs**"
