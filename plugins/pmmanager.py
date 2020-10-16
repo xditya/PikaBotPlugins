@@ -140,7 +140,7 @@ if LOGBOT is not None:
             return
         sender = await bot.get_entity(chat_id)
 
-        if chat_id == bot.uid:
+        if sender.id == bot.uid:
  
             # don't log Saved Messages
  
@@ -161,9 +161,9 @@ if LOGBOT is not None:
         if any([x in event.raw_text for x in ("/start", "1", "2", "3", "4", "5")]):
             return
  
-        if not pmpermit_sql.is_approved(chat_id):
+        if not pmpermit_sql.is_approved(event.sender_id):
             # pm permit
-            await do_pm_permit_action(chat_id, event)
+            await do_pm_permit_action(event.sender_id, event)
               
                  
 if Var.STR2 is not None:   
