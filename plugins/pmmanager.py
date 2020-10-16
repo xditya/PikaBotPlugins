@@ -138,9 +138,9 @@ if LOGBOT is not None:
             # userbot's should not reply to other userbot's
             # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
             return
-        sender = await bot.get_entity(await bot.get_input_entity(chat_id))
+        sender = await bot.get_entity(chat_id)
 
-        if sender.id == bot.uid:
+        if chat_id == bot.uid:
  
             # don't log Saved Messages
  
@@ -332,7 +332,7 @@ async def do_pm_permit_action(chat_id, event):
                return
            except:
                return
-       r = await event.client.send_file(event.chat_id, WARN_PIC, caption=USER_BOT_NO_WARN)
+       r = await event.client.send_file(chat_id, WARN_PIC, caption=USER_BOT_NO_WARN)
        PM_WARNS[chat_id] += 1
        if chat_id in PREV_REPLY_MESSAGE:
            await PREV_REPLY_MESSAGE[chat_id].delete()
