@@ -140,7 +140,7 @@ if LOGBOT is not None:
             return
 
         sender = await event.get_chat()
-        if chat_id == bot2.uid or sender.bot or sender.verified;
+        if chat_id == bot2.uid or sender.bot or sender.verified:
 
             return
            
@@ -251,7 +251,7 @@ if Var.STR2 is not None:
             # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
             return
         sender = await event.get_chat()
-        if chat_id == bot2.uid or sender.bot or sender.verified;
+        if chat_id == bot2.uid or sender.bot or sender.verified:
             return
           
         if any([x in event.raw_text for x in ("/start", "1", "2", "3", "4", "5")]):
