@@ -7,7 +7,7 @@ except:
 
 def pikaa(a, shortname):
     try:
-      AS = os.environ.get(f"{shortname}", "").split("|")
+      AS = os.environ.get(f"{shortname}", None).split('|')
       if a.from_id == i1:
         return AS[0]
       if a.from_id == i2:
