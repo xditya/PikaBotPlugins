@@ -138,23 +138,9 @@ if LOGBOT is not None:
             # userbot's should not reply to other userbot's
             # https://core.telegram.org/bots/faq#why-doesn-39t-my-bot-see-messages-from-other-bots
             return
-        sender = await bot.get_entity(chat_id)
 
-        if chat_id == bot.uid:
- 
-            # don't log Saved Messages
- 
-            return
-
-        if sender.bot:
- 
-             # don't log bots
- 
-            return
- 
-        if sender.verified:
- 
-            # don't log verified accounts
+        sender = await event.get_chat()
+        if chat_id == bot2.uid or sender.bot or sender.verified;
 
             return
            
