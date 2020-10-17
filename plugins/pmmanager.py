@@ -11,6 +11,9 @@ from var import Var
 
 
 LOGBOT = os.environ.get("BOTLOG_CHATID", None)
+antispam = os.environ.get("PM_SPAM_LIMIT", None)
+if not antispam:
+   antispam=5
 if LOGBOT:
   LOGBOT = int(LOGBOT)
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
@@ -277,7 +280,7 @@ async def hehehe(event):
 async def do_pm_permit_action(chat_id, event):
        if chat_id not in PM_WARNS:
            PM_WARNS.update({chat_id: 0})
-       if PM_WARNS[chat_id] == 5:
+       if PM_WARNS[chat_id] == antispam:
            r = await event.reply(USER_BOT_WARN_ZERO)
            await asyncio.sleep(3)
            await event.client(functions.contacts.BlockRequest(chat_id))
