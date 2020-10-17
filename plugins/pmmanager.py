@@ -140,7 +140,7 @@ if LOGBOT is not None:
             return
 
         sender = await event.get_chat()
-        if chat_id == bot2.uid or sender.bot or sender.verified:
+        if chat_id == bot.uid or sender.bot or sender.verified:
 
             return
            
