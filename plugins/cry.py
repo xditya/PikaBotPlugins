@@ -1,4 +1,4 @@
-"""Use cmd `.cry` to cry"""
+"""Use cmd `{i}lcry` to cry"""
 
 from telethon import events
 from uniborg.util import ItzSjDude
