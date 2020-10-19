@@ -1,3 +1,6 @@
+"""For executing linux/Gnu Commands
+{i}bash <cmd> """
+
 from telethon import events
 import subprocess
 from telethon.errors import MessageEmptyError, MessageTooLongError, MessageNotModifiedError
