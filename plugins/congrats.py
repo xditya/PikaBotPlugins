@@ -1,3 +1,5 @@
+"""Congrats Module
+{i}Congo"""
 from telethon import events
 import random, re
 from pikabot.utils import ItzSjDude
