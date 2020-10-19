@@ -1,5 +1,6 @@
-"""CoinFlip for @UniBorg
-Syntax: .coinflip [optional_choice]"""
+"""CoinFlip for PikaBot
+{i}coinflip [optional_choice]"""
+#credits @Uniborg 
 from telethon import events
 import random, re
 from pikabot.utils import ItzSjDude
