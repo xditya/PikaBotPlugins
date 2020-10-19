@@ -1,14 +1,5 @@
-"""Emoji
-
-Available Commands:
-
-.emoji shrug
-
-.emoji apple
-
-.emoji :/
-
-.emoji -_-"""
+"""Fun calling spoof module 
+{i}call"""
 
 from telethon import events
 
