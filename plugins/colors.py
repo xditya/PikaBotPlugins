@@ -1,5 +1,6 @@
-"""Color Plugin for @UniBorg
-Syntax: .color <color_code>"""
+"""Color Plugin for PikaBot
+{i}color <color_code>"""
+#credits @Uniborg 
 from telethon import events
 import os
 from PIL import Image, ImageColor
