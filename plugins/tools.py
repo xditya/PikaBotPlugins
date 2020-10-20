@@ -16,7 +16,7 @@ from pikabot import CMD_HELP
 from PIL import Image
 from datetime import datetime
 from telegraph import Telegraph, upload_file, exceptions
-
+from var import Var
 @ItzSjDude(outgoing=True, pattern="scan ?(.*)")
 async def _(event):
     if event.fwd_from:
@@ -144,7 +144,7 @@ telegraph = Telegraph()
 r = telegraph.create_account(short_name=Config.TELEGRAPH_SHORT_NAME)
 auth_url = r["auth_url"]
 
-@ItzSjDude(outgoing=True, pattern="t (m|t) ?(.*)")
+@ItzSjDude(outgoing=True, pattern="t(m|t) ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
