@@ -46,7 +46,7 @@ async def on_add_black_list(event):
       for trigger in to_blacklist:
           sql.add_to_blacklist(event.chat_id, trigger.lower())
       await event.edit("Added {} triggers to the blacklist in the current chat".format(len(to_blacklist)))
-    if event.from_id==bot2.uid:
+    elif event.from_id==bot2.uid:
       text = event.pattern_match.group(1)
       to_blacklist = list(set(trigger.strip() for trigger in text.split("\n") if trigger.strip()))
       for trigger in to_blacklist:
@@ -78,7 +78,7 @@ async def on_view_blacklist(event):
               await event.delete()
       else:
           await event.edit(OUT_STR)
-    if bot2 is not None and event.from_id==bot2.uid:
+    elif bot2 is not None and event.from_id==bot2.uid:
       all_blacklisted = sqlx.gc_blx(event.chat_id)
       OUT_STR = "Blacklists in the Current Chat:\n"
       if len(all_blacklisted) > 0:
@@ -113,7 +113,7 @@ async def on_delete_blacklist(event):
           if sql.rm_from_blacklist(event.chat_id, trigger.lower()):
               successful += 1
       await event.edit(f"Removed {successful} / {len(to_unblacklist)} from the blacklist")
-    if bot2 is not None and event.from_id==bot2.uid:
+    elif bot2 is not None and event.from_id==bot2.uid:
       text = event.pattern_match.group(1)
       to_unblacklist = list(set(trigger.strip() for trigger in text.split("\n") if trigger.strip()))
       successful = 0
