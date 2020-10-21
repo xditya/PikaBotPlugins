@@ -54,7 +54,7 @@ async def on_add_black_list(event):
       await event.edit("Added {} triggers to the blacklist in the current chat".format(len(to_blacklist)))
 
 
-@ItzSjDude(pattern="listblacklist$")
+@ItzSjDude(pattern="listblacklist", outgoing=True)
 async def on_view_blacklist(event):
     if event.from_id==bot.uid:
       all_blacklisted = sql.get_chat_blacklist(event.chat_id)
