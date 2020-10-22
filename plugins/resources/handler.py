@@ -2,6 +2,7 @@ import os
 try:
   from pikabot import bot,bot2,bot3,bot4
   i1=bot.uid; i2=bot2.uid; i3=bot3.uid; i4=bot4.uid
+  from_id=sender_id 
 except:
     pass
 
