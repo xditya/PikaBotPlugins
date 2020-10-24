@@ -11,7 +11,7 @@ Available Commands:
 .emoji -_-"""
 
 from telethon import events
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 import asyncio
 
 

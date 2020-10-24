@@ -8,7 +8,7 @@ By:-@Zero_cool7870
 import os 
 import asyncio
 from telethon import events
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern=r"upb")

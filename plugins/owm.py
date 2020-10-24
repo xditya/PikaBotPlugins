@@ -11,7 +11,7 @@ from datetime import datetime
 from pytz import country_timezones as c_tz, timezone as tz, country_names as c_n
 
 from userbot import OPEN_WEATHER_MAP_APPID as OWM_API, CMD_HELP
-from userbot.utils import ItzSjDude, errors_handler
+from pikabot.utils import ItzSjDude, errors_handler
 
 # ===== CONSTANT =====
 DEFCITY = 'Ahmedabad'

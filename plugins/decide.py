@@ -2,7 +2,7 @@
 Syntax: .decide"""
 from telethon import events
 import requests
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="decide")

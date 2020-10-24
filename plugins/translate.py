@@ -5,7 +5,7 @@ Available Commands:
 
 import emoji
 from googletrans import Translator
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="tr ?(.*)")

@@ -5,7 +5,7 @@ originaly from : @corsicanu_bot
 
 import sys
 from telethon import events, functions
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 import random
 
 

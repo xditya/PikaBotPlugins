@@ -7,7 +7,7 @@ import time
 from datetime import datetime
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
-from userbot.utils import ItzSjDude, progress
+from pikabot.utils import ItzSjDude, progress
 
 
 FF_MPEG_DOWN_LOAD_MEDIA_PATH = "uniborg.media.ffmpeg"

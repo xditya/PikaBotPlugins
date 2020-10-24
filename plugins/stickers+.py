@@ -26,7 +26,7 @@ from telethon.tl.types import (
     InputStickerSetShortName,
     MessageMediaPhoto
 )
-from userbot.utils import admin_cmd
+from pikabot.utils import admin_cmd
 from userbot import ALIVE_NAME
 
 FILLED_UP_DADDY = "Invalid pack selected."

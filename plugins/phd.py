@@ -25,7 +25,7 @@ from telethon.tl.functions.account import UpdateNotifySettingsRequest
 
 from telethon.tl.functions.messages import ImportChatInviteRequest
 
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 @ItzSjDude(outgoing=True, pattern="phd ?(.*)")
 

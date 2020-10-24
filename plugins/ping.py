@@ -1,6 +1,6 @@
 from telethon import events
 from datetime import datetime
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 @ItzSjDude(outgoing=True, pattern="ping")
 async def _(event):

@@ -11,7 +11,7 @@ from random import randint
 from time import sleep
 
 
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="random")

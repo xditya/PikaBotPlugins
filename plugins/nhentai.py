@@ -5,7 +5,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 from userbot import bot, CMD_HELP
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 @ItzSjDude(outgoing=True, pattern="nhentai(?: |$)(.*)")
 async def _(event):

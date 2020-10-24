@@ -1,6 +1,6 @@
 
 import logging
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName

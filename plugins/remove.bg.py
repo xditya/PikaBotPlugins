@@ -6,7 +6,7 @@ import io
 import os
 import requests
 from telethon import events
-from userbot.utils import progress, ItzSjDude 
+from pikabot.utils import progress, ItzSjDude 
 
 
 @ItzSjDude(outgoing=True, pattern="rmbg ?(.*)")

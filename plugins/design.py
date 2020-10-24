@@ -2,7 +2,7 @@
 import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="oin")

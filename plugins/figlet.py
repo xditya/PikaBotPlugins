@@ -1,5 +1,5 @@
 import pyfiglet
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 @ItzSjDude(outgoing=True, pattern=r"figlet ?(.*)")
 async def figlet(event):

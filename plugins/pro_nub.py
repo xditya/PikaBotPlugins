@@ -11,7 +11,7 @@ from telethon import events
 
 import asyncio
 
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 

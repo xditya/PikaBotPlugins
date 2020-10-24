@@ -5,7 +5,7 @@ import asyncio
 import os
 import time
 from datetime import datetime
-from userbot.utils import ItzSjDude, progress
+from pikabot.utils import ItzSjDude, progress
 
 async def progress(current, total, event, start, type_of_ps, file_name=None):
     """Generic progress_callback for uploads and downloads."""

@@ -6,7 +6,7 @@ from contextlib import suppress
 import os
 import sys
 import asyncio
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 # -- Constants -- #
 IS_SELECTED_DIFFERENT_BRANCH = (

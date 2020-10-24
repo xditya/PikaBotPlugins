@@ -6,7 +6,7 @@ import aiohttp
 import io
 import time
 from datetime import tzinfo, datetime
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="weathers (.*)")

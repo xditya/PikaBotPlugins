@@ -10,8 +10,8 @@ from asyncio import sleep
 from telethon.errors import rpcbaseerrors
 
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
-from userbot.utils import register, errors_handler
-from userbot.utils import ItzSjDude
+from pikabot.utils import register, errors_handler
+from pikabot.utils import ItzSjDude
 
 @ItzSjDude(outgoing=True, pattern=r"purge")
 @errors_handler

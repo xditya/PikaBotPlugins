@@ -4,7 +4,7 @@ Syntax: .screencapture <Website URL>"""
 import io
 import requests
 from telethon import events
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="screencapture (.*)")

@@ -5,7 +5,7 @@ import asyncio
 import os
 import time
 from datetime import datetime
-from userbot.utils import ItzSjDude, progress
+from pikabot.utils import ItzSjDude, progress
 
 
 @ItzSjDude(outgoing=True, pattern="convert (.*)")  # pylint:disable=E0602

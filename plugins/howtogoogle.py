@@ -9,7 +9,7 @@ from telethon import events
 import os
 import requests
 import json
-from userbot.utils import *
+from pikabot.utils import *
 
 
 @itzzSj(outgoing=True, pattern="^.ggl(.*)")

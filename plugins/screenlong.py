@@ -6,7 +6,7 @@ import traceback
 from datetime import datetime
 from selenium import webdriver
 from telethon import events
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="screenlong (.*)")

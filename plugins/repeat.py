@@ -1,6 +1,6 @@
 import asyncio
 from asyncio import wait
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="repeat ?(.*)")

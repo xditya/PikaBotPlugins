@@ -6,7 +6,7 @@
 from telethon import events
 import random
 import asyncio
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 @ItzSjDude(outgoing=True, pattern=r"habuse(.*)")
 async def _(event):

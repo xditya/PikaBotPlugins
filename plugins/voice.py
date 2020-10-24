@@ -8,7 +8,7 @@ import os
 import subprocess
 from datetime import datetime
 from gtts import gTTS
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="voice (.*)")

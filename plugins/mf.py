@@ -8,7 +8,7 @@ from telethon import events, functions, __version__
 
 import asyncio
 
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 @ItzSjDude(outgoing=True, pattern="(.*)")
 

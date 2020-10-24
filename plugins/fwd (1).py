@@ -4,7 +4,7 @@ Syntax: .fwd as reply to any message"""
 from telethon import events
 from telethon import sync
 from telethon.tl import types, functions
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="frwd")

@@ -2,7 +2,7 @@
 Syntax: .gbot"""
 from telethon import events
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
-from userbot.utils import *
+from pikabot.utils import *
 
 
 @ItzSjDude(outgoing=True, pattern="gbot(.*)")

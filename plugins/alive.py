@@ -6,7 +6,7 @@
 import asyncio
 from telethon import events
 from pikabot.main_plugs.plug import *
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 from telethon import events
 
 

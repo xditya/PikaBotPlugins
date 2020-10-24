@@ -5,7 +5,7 @@ from telethon import events
 from datetime import datetime
 import io
 import speedtest
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="speed ?(.*)")

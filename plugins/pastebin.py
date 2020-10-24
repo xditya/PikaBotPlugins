@@ -5,7 +5,7 @@ import asyncio
 from datetime import datetime
 import os
 import requests
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 def progress(current, total):

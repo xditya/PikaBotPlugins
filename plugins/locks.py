@@ -3,7 +3,7 @@ from telethon.tl.types import ChatBannedRights
 from userbot import ALIVE_NAME
 from userbot import CMD_HELP
 from userbot.events import register, errors_handler
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 @ItzSjDude(outgoing=True, pattern=r"lock ?(.*)")

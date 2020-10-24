@@ -4,7 +4,7 @@
 
 from telethon import events
 from telethon.tl.functions.messages import SaveDraftRequest
-from userbot.utils import *
+from pikabot.utils import *
 
 @ItzSjDude(outgoing=True, pattern="chain(.*)")
 async def _(event):

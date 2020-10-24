@@ -5,7 +5,7 @@ from telethon import events
 from telethon import sync
 from var import Var
 from telethon.tl import types, functions
-from userbot.utils import *
+from pikabot.utils import *
 
 
 @ItzSjDude(outgoing=True, pattern="fwd(.*)")

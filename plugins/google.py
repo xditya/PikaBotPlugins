@@ -14,7 +14,7 @@ from urllib.parse import quote_plus
 from urllib.error import HTTPError
 from google_images_download import google_images_download
 from gsearch.googlesearch import search
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 from search_engine_parser import GoogleSearch
 
 

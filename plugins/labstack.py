@@ -5,7 +5,7 @@ import subprocess
 import time
 import json
 import sys
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 @ItzSjDude(outgoing=True, pattern="labstack ?(.*)")
 async def labstack(event):

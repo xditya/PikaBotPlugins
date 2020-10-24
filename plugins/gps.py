@@ -1,6 +1,6 @@
 # Credits ;- @mrconfused
 from geopy.geocoders import Nominatim
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 from telethon.tl import types
 from userbot import CMD_HELP 
 

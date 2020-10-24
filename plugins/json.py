@@ -2,7 +2,7 @@
 Syntax: .json"""
 from telethon import events
 import io
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="json")

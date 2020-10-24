@@ -9,7 +9,7 @@ from telethon.tl.functions.channels import LeaveChannelRequest, CreateChannelReq
 from collections import deque
 from telethon.tl.functions.users import GetFullUserRequest
 from userbot.events import register
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 from SysRuntime import *
 
 @ItzSjDude(outgoing=True, pattern="leave$")

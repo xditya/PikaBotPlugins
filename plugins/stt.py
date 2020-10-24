@@ -4,7 +4,7 @@ from telethon import events
 import requests
 import os
 from datetime import datetime
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="sttext (.*)")

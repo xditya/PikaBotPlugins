@@ -1,5 +1,5 @@
 from telethon.tl.types import InputMediaDice
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 # EMOJI CONSTANTS
 DART_E_MOJI = "🎯"

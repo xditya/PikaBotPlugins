@@ -24,7 +24,7 @@ import json
 from PIL import ImageEnhance, ImageOps
 
 from userbot import CMD_HELP
-from userbot.utils import *
+from pikabot.utils import *
 
 
 

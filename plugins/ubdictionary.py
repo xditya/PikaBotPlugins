@@ -5,7 +5,7 @@
 Syntax: .ud Query"""
 from telethon import events
 import urbandict
-from userbot.utils import ItzSjDude
+from pikabot.utils import ItzSjDude
 
 
 @ItzSjDude(outgoing=True, pattern="ud (.*)")

@@ -2,7 +2,7 @@ import datetime
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
-from userbot.utils import *
+from pikabot.utils import *
 
 @ItzSjDude(outgoing=True, pattern="mask(.*)")
 async def _(event):
