@@ -1,0 +1,21 @@
+name: Small Fix
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: "userbot.utils"
+          replace: "pikabot.utils"
+      - name: Create Pull Request
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Fix for from_id'
+          commit_options: '--no-verify'
+          repository: .
+          commit_user_name: ItzSjDude
+          commit_user_email: Support@itzsjdude.in
+          commit_author: ItzSjDude <58950863+ItzSjDude@users.noreply.github.com>
