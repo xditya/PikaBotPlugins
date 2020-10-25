@@ -49,7 +49,7 @@ LWARN = ("**This is your last warning. DO NOT send another message else you will
 
 @bot.on(events.NewMessage(pattern="/start ?(.*)", incoming=True))
 async def _(event):
-    chat_id = event.from_id
+    chat_id = event.sender_id
     userid = event.sender_id
     if not pmpermit_sql.is_approved(chat_id):
         chat = await event.get_chat()
@@ -58,7 +58,7 @@ async def _(event):
         if event.is_private:
          async with event.client.conversation(chat) as conv:
             await event.client.send_message(chat, PM)
-            chat_id = event.from_id
+            chat_id = event.sender_id
             response = await conv.get_response(chat)
             y = response.text
             if y == "1":
@@ -125,7 +125,7 @@ async def _(event):
 if Var.STR2 is not None:
   @bot2.on(events.NewMessage(pattern="/start ?(.*)", incoming=True))
   async def _(event):
-      chat_id = event.from_id
+      chat_id = event.sender_id
       userid = event.sender_id
       if not pmpermit_sql.is_client_approved(chat_id):
         chat = await event.get_chat()
@@ -134,7 +134,7 @@ if Var.STR2 is not None:
         if event.is_private:
          async with event.client.conversation(chat) as conv:
              await event.client.send_message(chat, message=PM)
-             chat_id = event.from_id
+             chat_id = event.sender_id
              response = await conv.get_response(chat)
              y = response.text
              if y == "1":

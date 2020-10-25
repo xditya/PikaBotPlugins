@@ -50,7 +50,7 @@ async def _(event):
     if not user.first_name:
         user.first_name = user.id
     pack = 1
-    userid = event.from_id
+    userid = event.sender_id
     packname = f"{user.username}'s {pack}"
     packshortname = f"vol_{pack}_with_{userid}"
     await event.edit("`Look dat way,it's a gurl!`**（　ﾟДﾟ）**\n`Meanwhile, lemme kang this stcker over hehe`**ヽ༼ ಠ益ಠ ༽ﾉ**")

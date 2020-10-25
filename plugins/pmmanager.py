@@ -236,7 +236,7 @@ if Var.STR2 is not None:
     @bot2.on(events.NewMessage(incoming=True))
     async def on_new_private_message(event):
         u = await event.client.get_me() 
-        if event.from_id == bot2.uid:
+        if event.sender_id == bot2.uid:
             return
 
         if Var.BOTLOG_CHATID is None:

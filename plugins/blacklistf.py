@@ -23,7 +23,7 @@ except:
 @borg.on(admin_cmd(incoming=True))
 async def on_new_message(event):
     # TODO: exempt admins from locks
-    if borg.me.id == event.from_id:
+    if borg.me.id == event.sender_id:
         return
     name = event.raw_text
     snips = sql.get_chat_blacklist(event.chat_id)
@@ -40,13 +40,13 @@ async def on_new_message(event):
 
 @ItzSjDude(pattern="blacklist ((.|\n)*)")
 async def on_add_black_list(event):
-    if event.from_id == bot.uid:
+    if event.sender_id == bot.uid:
       text = event.pattern_match.group(1)
       to_blacklist = list(set(trigger.strip() for trigger in text.split("\n") if trigger.strip()))
       for trigger in to_blacklist:
           sql.add_to_blacklist(event.chat_id, trigger.lower())
       await event.edit("Added {} triggers to the blacklist in the current chat".format(len(to_blacklist)))
-    elif event.from_id==bot2.uid:
+    elif event.sender_id==bot2.uid:
       text = event.pattern_match.group(1)
       to_blacklist = list(set(trigger.strip() for trigger in text.split("\n") if trigger.strip()))
       for trigger in to_blacklist:
@@ -56,7 +56,7 @@ async def on_add_black_list(event):
 
 @ItzSjDude(pattern="listblacklist", outgoing=True)
 async def on_view_blacklist(event):
-    if event.from_id==bot.uid:
+    if event.sender_id==bot.uid:
       all_blacklisted = sql.get_chat_blacklist(event.chat_id)
       OUT_STR = "Blacklists in the Current Chat:\n"
       if len(all_blacklisted) > 0:
@@ -78,7 +78,7 @@ async def on_view_blacklist(event):
               await event.delete()
       else:
           await event.edit(OUT_STR)
-    elif bot2 is not None and event.from_id==bot2.uid:
+    elif bot2 is not None and event.sender_id==bot2.uid:
       all_blacklisted = sqlx.gc_blx(event.chat_id)
       OUT_STR = "Blacklists in the Current Chat:\n"
       if len(all_blacklisted) > 0:
@@ -113,7 +113,7 @@ async def on_delete_blacklist(event):
           if sql.rm_from_blacklist(event.chat_id, trigger.lower()):
               successful += 1
       await event.edit(f"Removed {successful} / {len(to_unblacklist)} from the blacklist")
-    elif bot2 is not None and event.from_id==bot2.uid:
+    elif bot2 is not None and event.sender_id==bot2.uid:
       text = event.pattern_match.group(1)
       to_unblacklist = list(set(trigger.strip() for trigger in text.split("\n") if trigger.strip()))
       successful = 0
@@ -126,7 +126,7 @@ if Var.STR2 is not None:
   @bot2.on(admin_cmd(incoming=True))
   async def on_new_message(event):
       # TODO: exempt admins from locks
-      if bot2.me.id == event.from_id:
+      if bot2.me.id == event.sender_id:
           return
       name = event.raw_text
       snips = sqlx.gc_blx(event.chat_id)
