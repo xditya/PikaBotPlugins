@@ -1,3 +1,7 @@
+"""Shows deleted messages
+{i}undlt"""
+
+
 from telethon import events
 from uniborg.util import ItzSjDude
 import asyncio
