@@ -140,7 +140,7 @@ def generate_change_log(git_repo, diff_marker):
 
 async def deploy_start(bot, message, refspec, remote):
     await message.edit(RESTARTING_APP)
-    await message.edit("**The Latest Branch** `Master` **Has Been Pushed To Heroku** \n**Now Trying A Restart To Complete Updation Process ⚠️ !!** To Check If I am Alive Just Do `.alive` or `.help` !!!! Thank For Using ItzSjDude Userbot Service (◍•ᴗ•◍)❤")
+    await message.edit("My Sweet Master! I am updating kindly wait for a min or two 🤗 after that Do {x}ping or {x}alive  ...my sweet master !!!".format(x=rx))
     await remote.push(refspec="HEAD:refs/heads/master", force=True)
     await bot.disconnect()
     os.execl(sys.executable, sys.executable, *sys.argv)
