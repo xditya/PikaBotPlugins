@@ -3,8 +3,9 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for getting info
-    about any user on Telegram(including you!). """
+""" Getting info
+    about any user on Telegram(including you!)
+{i}"""
 
 from telethon.events import NewMessage
 from typing import Union
@@ -301,7 +302,7 @@ class TGDoc:
 
 
 
-@register(pattern=r"^\.u(?:ser)?(\s+[\S\s]+|$)", outgoing=True)
+@ItzSjDude(pattern=r"u(?:ser)?(\s+[\S\s]+|$)", outgoing=True)
 async def who(event: NewMessage.Event):
     """ For .user command, get info about a user. """
     if event.fwd_from:
