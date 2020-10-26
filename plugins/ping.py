@@ -7,7 +7,7 @@ from telethon import events
 from datetime import datetime
 from pikabot.utils import ItzSjDude
 
-@ItzSjDude(outgoing=True, pattern="itest")
+@ItzSjDude(outgoing=True, pattern="ping")
 async def _(event):
     if event.fwd_from:
         return
