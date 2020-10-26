@@ -170,7 +170,7 @@ async def _(rstrt):
     if Var.HEROKU_APP_NAME is not None:
       try:
          app = Heroku.app(Var.HEROKU_APP_NAME)
-         await rstrt.edit("**Heroku*** : Restarted. `.ping` me or `.helpme` to check if I am online")
+         await rstrt.edit("**Pika! Pi!*** : Boss I am restarting! Please wait for a min after that do {x}ping or {x}help".format(x=rx))
          app.restart()
       except:
           pass
