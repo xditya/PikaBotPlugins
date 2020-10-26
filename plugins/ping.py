@@ -1,5 +1,5 @@
 """Ping Module for Pikabot
-{}ping""" 
+{i}ping""" 
 
 #Made by @ItzSjDude for Pikabot 
 
