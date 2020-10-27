@@ -31,9 +31,9 @@ else:
 emoji=os.environ.get("INLINE_EMOJI", "") 
  
 if emoji is not None:
-  inmoji=emoji
+  xl=emoji
 else:
-  inmoji=""
+  xl=""
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
