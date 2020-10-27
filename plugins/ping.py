@@ -1,5 +1,5 @@
 """Ping Module for Pikabot
-{i}ping""" 
+{i}pika""" 
 
 #Made by @ItzSjDude for Pikabot 
 
@@ -7,7 +7,7 @@ from telethon import events
 from datetime import datetime
 from pikabot.utils import ItzSjDude
 
-@ItzSjDude(outgoing=True, pattern="ping")
+@ItzSjDude(outgoing=True, pattern="pika")
 async def _(event):
     if event.fwd_from:
         return
@@ -16,4 +16,4 @@ async def _(event):
     await event.edit("Pong!")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    await event.edit("✪  𝗣𝗂𝗄𝖺 𝗣𝗂𝗄𝖺 𝖯𝗂𝗄𝖺𝖼𝗁𝗎 !\n➥ {} Ms\n➥ 𝑴𝒚 𝑩𝒐𝒔𝒔 **{}**".format(ms,az))
+    await event.edit("✪  𝗣𝗂𝗄𝖺 𝗣𝗂𝗄𝖺 𝗣𝗂𝗄𝖺𝖼𝗁𝗎 !\n➥ {} Ms\n➥ 𝑴𝒚 𝑩𝒐𝒔𝒔 **{}**".format(ms,az))
