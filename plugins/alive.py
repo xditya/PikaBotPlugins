@@ -12,6 +12,12 @@ from telethon import events
 
 @ItzSjDude(outgoing=True,pattern=r"alive$")
 async def _(event):
+     
+     pix=pikaa(event, "ALIVE_PIC")
+     if pix is not None:
+        pic=pix
+     else:
+        pic=apic
      az=pikaa(event, "ALIVE_NAME")
      await event.delete() 
      a=await event.client.send_file(event.chat_id, pic,caption=alivestr.format(az))
