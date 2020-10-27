@@ -17,3 +17,5 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit("✪  𝗣𝗂𝗄𝖺 𝗣𝗂𝗄𝖺 𝗣𝗂𝗄𝖺𝖼𝗁𝗎 !\n➥ {} Ms\n➥ 𝑴𝒚 𝑩𝒐𝒔𝒔 **{}**".format(ms,az))
+    await asyncio.sleep(7)
+    await event.delete()
