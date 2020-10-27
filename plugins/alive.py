@@ -20,6 +20,6 @@ async def _(event):
         pic=apic
      az=pikaa(event, "ALIVE_NAME")
      await event.delete() 
-     a=await event.client.send_file(event.chat_id, pic,caption=alivestr.format(az,pupt))
+     a=await event.client.send_file(event.chat_id, pic,caption=alivestr.format(pupt,az))
      await asyncio.sleep(15)
      await a.delete()
