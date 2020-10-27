@@ -1,0 +1,19 @@
+"""Alive Plugin for Pikabot
+{i}alive
+"""
+#Made by @ItzSjDude. All Rights Reserved
+
+import asyncio
+from telethon import events
+from pikabot.main_plugs.plug import *
+from pikabot.utils import ItzSjDude
+from telethon import events
+
+
+@ItzSjDude(outgoing=True,pattern=r"alive$")
+async def _(event):
+     az=pikaa(event, "ALIVE_NAME")
+     await event.delete() 
+     a=await event.client.send_file(event.chat_id, pic,caption=alivestr.format(az))
+     await asyncio.sleep(15)
+     await a.delete()
