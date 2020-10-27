@@ -26,8 +26,14 @@ else:
 if bot4:
     b4 = bot4.me
 else: 
-    b4=b1   
+    b4=b1 
 
+emoji=os.environ.get("INLINE_EMOJI", "") 
+ 
+if emoji is not None:
+  inmoji=emoji
+else:
+  inmoji=""
 if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
     @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
     async def inline_handler(event):
@@ -118,15 +124,16 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
              await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             
 def paginate_help(page_number, loaded_plugins, prefix):
-    number_of_rows = 7
-    number_of_cols = 4
+    
+    number_of_rows = 5
+    number_of_cols = 2
     helpable_plugins = []
     for p in loaded_plugins:
         if not p.startswith("_"):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [custom.Button.inline(
-        "{} {} {}".format("",x, ""),
+        "{} {} {}".format(xl,x,xl),
         data="us_plugin_{}".format(x))
         for x in helpable_plugins]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
