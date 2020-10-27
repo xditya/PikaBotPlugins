@@ -5,6 +5,7 @@ import asyncio
 import json
 import random
 import re
+import os
 from telethon import events, errors, custom
 from var import Var
 import io
