@@ -13,7 +13,7 @@ async def _(event):
         return
     az=pikaa(event, "ALIVE_NAME")
     start = datetime.now()
-    await event.edit("{rx}pika")
+    await event.edit(f"{rx}pika")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
     a=await event.edit("✪  𝗣𝗂𝗄𝖺 𝗣𝗂𝗄𝖺 𝗣𝗂𝗄𝖺𝖼𝗁𝗎 !\n➥ {} Ms\n➥ 𝑴𝒚 𝑩𝒐𝒔𝒔 **{}**".format(ms,az))
